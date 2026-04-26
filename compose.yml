@@ -1,0 +1,11 @@
+name: lightmans-currency
+
+services:
+  server:
+    image: itzg/minecraft-server
+    stop_grace_period: 60s
+    env_file: "./envs/minecraft.env"
+    ports: 
+      - "25565:25565"
+    volumes:
+      - ./data/lightmans-currency:/data

@@ -1,0 +1,6 @@
+*.tar.gz
+*.tar
+z
+data/
+backups/
+envs/minecraft.env
