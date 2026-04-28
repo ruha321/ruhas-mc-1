@@ -3,4 +3,7 @@
 z
 data/
 backups/
-envs/minecraft.env
+envs/
+!envs/minecraft.env.example
+mc-backups/
+quadlet/

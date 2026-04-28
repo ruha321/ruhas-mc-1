@@ -1,11 +1,25 @@
 name: lightmans-currency
 
 services:
-  server:
-    image: itzg/minecraft-server
+  mc:
+    image: docker.io/itzg/minecraft-server
+    container_name: mc
     stop_grace_period: 60s
-    env_file: "./envs/minecraft.env"
+    env_file: "~/ruhas-mc-1/envs/minecraft.env"
     ports: 
       - "25565:25565"
     volumes:
-      - ./data/lightmans-currency:/data
+      - ~/ruhas-mc-1/data:/data
+    restart: unless-stopped
+
+  backups:
+    image: docker.io/itzg/mc-backup
+    container_name: mc-backup
+    depends_on:
+      mc:
+        condition: service_healthy
+    env_file: "~/ruhas-mc-1/envs/mc-backup.env"
+    volumes:
+      - ./data:/data:ro
+      - ./mc-backups:/backups
+    restart: unless-stopped
