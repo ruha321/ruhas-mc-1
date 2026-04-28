@@ -16,8 +16,7 @@ services:
     image: docker.io/itzg/mc-backup
     container_name: mc-backup
     depends_on:
-      mc:
-        condition: service_healthy
+      - mc
     env_file: "~/ruhas-mc-1/envs/mc-backup.env"
     volumes:
       - ./data:/data:ro
