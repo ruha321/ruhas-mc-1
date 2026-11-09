@@ -1,0 +1,9 @@
+[Unit]
+Description=Minecraft Pod
+
+[Pod]
+PodName=mc-pod-1
+PublishPort=25565:25565
+
+[Install]
+WantedBy=default.target

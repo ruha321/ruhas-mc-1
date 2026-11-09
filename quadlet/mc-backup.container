@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft Backup
+
+[Container]
+ContainerName=mc-backup
+Image=docker.io/itzg/mc-backup
+Pod=mc.pod
+EnvironmentFile=%h/ruhas-mc-1/envs/mc-backup.env
+Volume=%h/ruhas-mc-1/data:/data:ro,Z
+Volume=%h/ruhas-mc-1/mc-backups:/backups:Z
+
+[Install]
+WantedBy=default.target

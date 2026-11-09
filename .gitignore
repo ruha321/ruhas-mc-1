@@ -6,4 +6,3 @@ backups/
 envs/
 !envs/minecraft.env.example
 mc-backups/
-quadlet/

@@ -1,0 +1,4 @@
+owner=friend-pc
+status=stopped
+generation=1
+updated=2026-04-27T23:40:00+09:00
